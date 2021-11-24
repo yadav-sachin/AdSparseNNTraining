@@ -23,9 +23,6 @@ file_names = (
     "HNSW_rebuild_no_update.txt",
     "PyTorchImplementation.txt",
     "SLIDE.txt"
-    # "tf_gpu_256_Amazon670K.txt",
-    # "tf_cpu_256_Amazon670K.txt",
-    # "my.txt"
 )
 
 print("1")
@@ -37,31 +34,21 @@ print("2")
 plt.xscale("log")
 plt.plot(hnsw_reg_up_data[1], hnsw_reg_up_data[2], label="HNSW CPU regular updates")
 plt.plot(hnsw_no_up_data[1], hnsw_no_up_data[2], label="HNSW CPU dynamic update freq")
-# plt.plot(tf_gpu_data[1], tf_gpu_data[2])
 plt.plot(pt_data[1], pt_data[2], label="PyTorch GPU baseline")
-# plt.plot(slide_data[1], slide_data[2], label="SLIDE")
-# print(min(slide_data[1]))
-print(min(pt_data[1]))
 plt.legend()
 plt.xlabel("Time(s)")
 plt.ylabel("Test accuracy")
-# plt.plot(tf_cpu_data[1], tf_cpu_data[2])
-# plt.plot(my_data[1], my_data[2])
 plt.tight_layout()
-plt.savefig("h.png")
+plt.savefig("HNSW_AccVSt.png")
 
 plt.clf()
 plt.xscale("log")
 plt.plot(hnsw_reg_up_data[0], hnsw_reg_up_data[2], label="HNSW CPU regular updates")
 plt.plot(hnsw_no_up_data[0], hnsw_no_up_data[2], label="HNSW CPU dynamic update freq")
-# plt.plot(tf_gpu_data[1], tf_gpu_data[2])
 plt.plot(pt_data[0], pt_data[2], label="PyTorch GPU baseline")
-# print(min(slide_data[1]))
 print(min(pt_data[1]))
 plt.legend()
 plt.xlabel("Iterations")
 plt.ylabel("Test accuracy")
-# plt.plot(tf_cpu_data[1], tf_cpu_data[2])
-# plt.plot(my_data[1], my_data[2])
 plt.tight_layout()
-plt.savefig("g.png")
+plt.savefig("HNSW_AccVSIt.png")

@@ -1,1 +1,1 @@
-# SLIDE
+# Adaptive Sparse Neural Network Training
